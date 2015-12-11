@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <Label layoutX="33.0" layoutY="71.0" text="Title" />
+      <Label layoutX="33.0" layoutY="120.0" text="Director" />
+      <Label layoutX="209.0" layoutY="71.0" text="Rating" />
+      <Label layoutX="306.0" layoutY="120.0" text="Staring" />
+      <Label layoutX="404.0" layoutY="71.0" text="Release Date" />
+      <TextField fx:id="titleTF" layoutX="76.0" layoutY="66.0" prefHeight="27.0" prefWidth="115.0" />
+      <TextField fx:id="directorTF" layoutX="94.0" layoutY="115.0" prefHeight="27.0" prefWidth="168.0" />
+      <TextField fx:id="ratingTF" layoutX="260.0" layoutY="66.0" prefHeight="27.0" prefWidth="115.0" />
+      <TextField fx:id="staringTF" layoutX="369.0" layoutY="115.0" prefHeight="27.0" prefWidth="177.0" />
+      <TextField fx:id="releaseTF" layoutX="500.0" layoutY="66.0" prefHeight="27.0" prefWidth="70.0" />
+      <Line endX="500.0" layoutX="100.0" layoutY="187.0" startX="-100.0" strokeMiterLimit="100.0" />
+      <Label layoutX="278.0" layoutY="192.0" text="Movies" />
+      <Button fx:id="submit" layoutX="471.0" layoutY="154.0" mnemonicParsing="false" text="Submit Movie" />
+      <TextField fx:id="m1title" layoutX="25.0" layoutY="238.0" prefHeight="27.0" prefWidth="115.0" />
+      <Label layoutX="56.0" layoutY="209.0" text="Title" />
+      <Label layoutX="266.0" layoutY="209.0" text="Release Date" />
+      <TextField fx:id="m1release" layoutX="249.0" layoutY="239.0" prefHeight="27.0" prefWidth="115.0" />
+      <TextField fx:id="m1rating" layoutX="427.0" layoutY="241.0" prefHeight="27.0" prefWidth="115.0" />
+      <Label layoutX="444.0" layoutY="211.0" text="Rating" />
+      <Label fx:id="statusLabel" layoutX="66.0" layoutY="168.0" prefHeight="17.0" prefWidth="123.0" />
+      <Label layoutX="440.0" layoutY="276.0" text="Rating" />
+      <TextField fx:id="m2rating" layoutX="423.0" layoutY="306.0" prefHeight="27.0" prefWidth="115.0" />
+      <TextField fx:id="m2release" layoutX="245.0" layoutY="304.0" prefHeight="27.0" prefWidth="115.0" />
+      <Label layoutX="262.0" layoutY="274.0" text="Release Date" />
+      <Label layoutX="52.0" layoutY="274.0" text="Title" />
+      <TextField fx:id="m2title" layoutX="21.0" layoutY="303.0" prefHeight="27.0" prefWidth="115.0" />
+      <Label layoutX="439.0" layoutY="335.0" text="Rating" />
+      <TextField fx:id="m3rating" layoutX="422.0" layoutY="365.0" prefHeight="27.0" prefWidth="115.0" />
+      <TextField fx:id="m3release" layoutX="244.0" layoutY="363.0" prefHeight="27.0" prefWidth="115.0" />
+      <Label layoutX="261.0" layoutY="333.0" text="Release Date" />
+      <Label layoutX="51.0" layoutY="333.0" text="Title" />
+      <TextField fx:id="m3title" layoutX="20.0" layoutY="362.0" prefHeight="27.0" prefWidth="115.0" />
+   </children>
+</Pane>
