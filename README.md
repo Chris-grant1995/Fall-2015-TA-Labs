@@ -4,5 +4,7 @@ These are the lab assignments that I helped CS 0007 (Intro To Java) Students wit
 Included in these files are the assignments, the solutions, and the files that I gave to students to help
 complete the lab, if applicable. 
 
+This Repo will be updated, as I find more documents associated with the class.
+
 (Sidenote, overall I found this semester's labs way too hard for intro level CS students to be expected to complete,
 this concern has been noted with Pitt's CS Department.) 
