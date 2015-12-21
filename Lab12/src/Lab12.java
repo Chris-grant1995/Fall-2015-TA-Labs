@@ -13,6 +13,8 @@ public class Lab12 extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("Lab12.fxml"));
         primaryStage.setTitle("Lab 12");
         primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setResizable(false);
+        primaryStage.se
         primaryStage.show();
 
     }

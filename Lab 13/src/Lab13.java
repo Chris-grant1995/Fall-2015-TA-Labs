@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  * Created by Chris on 12/11/15.
@@ -14,8 +15,8 @@ public class Lab13 {
             Connection conn =
                     DriverManager.getConnection(DB_URL);
 
-            // If the DB already exists, drop the tables.
-            /*Statement stmt  = conn.createStatement();
+
+            Statement stmt  = conn.createStatement();
             try
             {
                 // Drop the UnpaidOrder table.
@@ -26,7 +27,8 @@ public class Lab13 {
             }
             catch(SQLException ex) {
             }
-            */
+
+            // If the DB already exists, drop the tables.
             dropTables(conn);
 
             // Build the Coffee table.
@@ -104,7 +106,17 @@ public class Lab13 {
                     "'3023447976')"
                     );
             //Only Edit below
+            stmt.execute("INSERT INTO Owners(FirstName,LastName,phone) VALUES (" +
+                            "'Christopher'," +
+                            "'Grant'," +
+                            "'3023447976')"
+            );
 
+            stmt.execute("INSERT INTO Owners(FirstName,LastName,phone) VALUES (" +
+                            "'Chris'," +
+                            "'Grant The Third '," +
+                            "'3023447976')"
+            );
 
 
             System.out.println("Owners table created & populated");
@@ -145,7 +157,24 @@ public class Lab13 {
                     "'12/31/1999')");
             //Only Edit Below
 
+            stmt.execute("INSERT INTO Media(Title,RDate,OwnerID,Format,Location,Ripped,PurchaseDate) VALUES (" +
+                    "'The Matrix2'," +
+                    "'3/31/1999'," +
+                    "2," +
+                    "'DVD'," +
+                    "'DVDs'," +
+                    "1," +
+                    "'12/31/1999')");
 
+
+            stmt.execute("INSERT INTO Media(Title,RDate,OwnerID,Format,Location,Ripped,PurchaseDate) VALUES (" +
+                    "'The Matrix3'," +
+                    "'3/31/1999'," +
+                    "3," +
+                    "'DVD'," +
+                    "'DVDs'," +
+                    "1," +
+                    "'12/31/1999')");
 
 
             System.out.println("Media table created & populated");
@@ -157,5 +186,49 @@ public class Lab13 {
     }
     public static void print(Connection conn){
         //For you guys to do.
+        try
+        {
+            Statement stmt = conn.createStatement();
+            ResultSet results = stmt.executeQuery("select * from " + "Owners");
+            ResultSetMetaData rsmd = results.getMetaData();
+            int numberCols = rsmd.getColumnCount();
+            ArrayList<String> fnameLname = new ArrayList<>();
+            fnameLname.add("Null name");
+            while(results.next())
+            {
+                String fname = results.getString(1);
+                String lname = results.getString(3);
+                fnameLname.add(fname + " " + lname);
+
+            }
+
+            results = stmt.executeQuery("select * from " + "Media");
+            while(results.next())
+            {
+               String title = results.getString(1);
+                int ownerID = results.getInt(4);
+                String format = results.getString(5);
+                String owner = fnameLname.get(ownerID);
+                System.out.println(title + " " +format + " " + owner);
+
+            }
+
+
+
+
+
+
+            results.close();
+            stmt.close();
+            conn.close();
+        }
+        catch (SQLException sqlExcept)
+        {
+            sqlExcept.printStackTrace();
+        }
+
+        // Close the connection.
+
     }
+
 }
